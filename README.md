@@ -16,7 +16,7 @@
 ## Features
 
 - **Rodin Nodes Overview**
-    - ![image](asset/workflow.png)
+    - ![image](.github/workflows/workflow.png)
     
     
 - **Extensive Format Support: Easily convert from and to over 30 different 3D file formats, including:**
