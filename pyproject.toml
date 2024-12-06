@@ -5,7 +5,7 @@ version = "1.0.0"
 license = { file = "LICENSE" }
 
 [project.urls]
-# Repository = "https://github.com/nsdtcloud3d/ComfyUI-3D-Convert"
+Repository = "https://github.com/nsdtcloud3d/ComfyUI-3D-Convert"
 #  Used by Comfy Registry https://comfyregistry.org
 
 [tool.comfy]
