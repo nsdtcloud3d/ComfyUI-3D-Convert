@@ -1,0 +1,14 @@
+[project]
+name = "comfyui-3d-convert"
+description = "A custom node for ComfyUI, which can convert file to anthor 3d type. import support formats: glb, gltf, ply, stl, obj, off, dae, fbx, dxf, ifc, xyz, pcd, las, laz, stp, step, 3dxml, iges, igs, shp, geojson, xaml, pts, asc, brep, fcstd, bim, usdz, pdb, vtk, svg, wrl, 3dm, 3ds, amf, 3mf, dwg, json, rfa, rvt, and export support gltf, obj, glb, ply, stl, xyz, off, dae, amf, 3mf, step, iges, fbx"
+version = "1.0.0"
+license = { file = "LICENSE" }
+
+[project.urls]
+# Repository = "https://github.com/SLAPaper/ComfyUI-Image-Selector"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "nsdtcloud"
+DisplayName = "ComfyUI-3D-Convert"
+Icon = ""
