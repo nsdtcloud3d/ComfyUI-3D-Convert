@@ -21,6 +21,9 @@ class ConvertTo3DFormat:
         }
 
     def main_func(self, file_path, target_type, api_key):
+        """
+        TODO call NSDT API convert 3d file to target type 
+        """
         print(f"file_path: {file_path}, target_type: {target_type}, api_key: {api_key}")
         return (file_path,)
 
@@ -46,7 +49,7 @@ class Load3DFile:
 
     def main_func(self, file_path):
         """
-        TODO call NSDT API convert 3d file to target type 
+        TODO check file type 
         """
         print(f"##########convert Load3DFile  {file_path}")
         return (file_path,)
