@@ -2,6 +2,7 @@ import requests
 from urllib3 import encode_multipart_formdata
 import os.path
 import time
+import uuid
 
 BASE_URL = "https://tumo.nsdt.cloud"
 STREAM_ID = "fbdb0ea035"
@@ -176,7 +177,9 @@ def test():
     extension = extension.lower()
     extension = extension[1:] if extension else ""
 
-    comment = f"""{{"convertType": "{target_type}", "from": "comfyUI-3D-Convert"}}"""
+    # comment = f"""{{"convertType": "{target_type}", "from": "comfyUI-3D-Convert"}}"""
+    file_hash = str(uuid.uuid4())
+    comment = f"""{{"convertType": "{target_type}", "from": "comfyUI-3D-Convert", "fileHash": "{file_hash}"}}"""
     directory = os.path.dirname(os.path.abspath(file_path))
     file_name = os.path.basename(file_path)
     new_file_path = os.path.join(directory, f'{file_name}.{target_type}')

@@ -39,6 +39,8 @@ class ConvertTo3DFormat:
         extension = extension[1:] if extension else ""
 
         file_hash = str(uuid.uuid4())
+        
+        # need fileHash 
         comment = f"""{{"convertType": "{target_type}", "from": "comfyUI-3D-Convert", "fileHash": "{file_hash}"}}"""
 
         directory = os.path.dirname(os.path.abspath(file_path))
