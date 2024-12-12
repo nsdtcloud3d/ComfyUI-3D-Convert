@@ -1,5 +1,7 @@
 
-
+from util.nsdt import upload_file_to_nsdt, convert_to_target_file
+import os.path
+import  uuid
 class ConvertTo3DFormat:
     """
     target_type suppoet : 'gltf, obj, glb, ply, stl, xyz, off, dae, amf, 3mf, step, iges, fbx'
@@ -22,9 +24,35 @@ class ConvertTo3DFormat:
 
     def main_func(self, file_path, target_type, api_key):
         """
-        TODO call NSDT API convert 3d file to target type 
+        call NSDT API convert 3d file to target type
         """
         print(f"file_path: {file_path}, target_type: {target_type}, api_key: {api_key}")
+
+        if file_path is None or os.path.exists(file_path) is None:
+            return
+
+        if api_key is None:
+            return (file_path,)
+
+        _, extension = os.path.splitext(file_path)
+        extension = extension.lower()
+        extension = extension[1:] if extension else ""
+
+        file_hash = str(uuid.uuid4())
+        comment = f"""{{"convertType": "{target_type}", "from": "comfyUI-3D-Convert", "fileHash": "{file_hash}"}}"""
+
+        directory = os.path.dirname(os.path.abspath(file_path))
+        file_name = os.path.basename(file_path)
+        new_file_path = os.path.join(directory, f'{file_name}.{target_type}')
+        resp = upload_file_to_nsdt(file_path, extension, api_key, comment)
+
+        if resp['done'] == 1:
+            blob_id = resp['blob_id']
+            print(f'file upload success: {blob_id}')
+            target_path = convert_to_target_file(api_key, target_type, blob_id, new_file_path)
+            if target_path is not None:
+                return target_path
+
         return (file_path,)
 
 class Load3DFile:
