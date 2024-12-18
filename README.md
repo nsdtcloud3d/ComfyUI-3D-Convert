@@ -105,5 +105,5 @@
 
 
 ## Contact us
-If you have any questions regarding the use of the SDK or need to customize the SDK's functionality, please contact us.
+If you have any questions regarding the use of the SDK 3dconvert.nsdt.cloud-API or need to customize the SDK's functionality, please contact us.
 ![contact](.github/workflows/wmwx.jpg)
